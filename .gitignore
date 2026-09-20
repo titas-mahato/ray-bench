@@ -1,0 +1,26 @@
+# Build directories
+build/
+bin/
+out/
+_deps/
+
+# Visual Studio / IDE files
+.vs/
+*.sln
+*.vcxproj*
+*.user
+*.suo
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Raylib fetched source build outputs
+raylib/
+
+# OS generated files
+Thumbs.db
+desktop.ini
+.DS_Store
