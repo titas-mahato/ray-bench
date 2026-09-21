@@ -29,10 +29,12 @@ FetchContent_MakeAvailable(raylib)
 set(SOURCES
     src/main.cpp
     src/ParticleSystem.cpp
+    src/BenchmarkHUD.cpp
 )
 
 set(HEADERS
     src/ParticleSystem.hpp
+    src/BenchmarkHUD.hpp
 )
 
 add_executable(ray-bench ${SOURCES} ${HEADERS})
