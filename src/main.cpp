@@ -1,4 +1,5 @@
 #include "raylib.h"
+#include "ParticleSystem.hpp"
 
 int main() {
     const int screenWidth = 1600;
@@ -9,15 +10,28 @@ int main() {
 
     SetTargetFPS(60);
 
+    ParticleSystem particleSystem(10000, screenWidth, screenHeight);
+    RenderMode currentMode = RenderMode::Batched;
+
     while (!WindowShouldClose()) {
+        float dt = GetFrameTime();
+        int width = GetScreenWidth();
+        int height = GetScreenHeight();
+
+        if (IsKeyPressed(KEY_SPACE)) {
+            currentMode = (currentMode == RenderMode::Naive) ? RenderMode::Batched : RenderMode::Naive;
+        }
+
+        particleSystem.Update(dt, width, height);
+
         BeginDrawing();
         ClearBackground(Color{ 8, 12, 20, 255 });
 
-        DrawText("ray-bench | Hardware Performance Benchmark", 40, 40, 24, Color{ 56, 189, 248, 255 });
-        DrawText("Target Spec: NVIDIA GTX 1650 (4GB VRAM) | 8GB RAM", 40, 75, 16, Color{ 148, 163, 184, 255 });
+        particleSystem.Render(currentMode);
 
-        DrawText("Base window and rendering pipeline initialized.", 40, 130, 18, RAYWHITE);
-        DrawText("Press ESC to exit.", 40, screenHeight - 60, 14, Color{ 100, 116, 139, 255 });
+        DrawText("ray-bench | Particle Simulation Active", 20, 20, 18, Color{ 56, 189, 248, 255 });
+        DrawText(TextFormat("Mode: %s (Press SPACE to toggle)", (currentMode == RenderMode::Naive) ? "Naive (Unbatched)" : "Batched (Vertex Stream)"), 20, 45, 14, RAYWHITE);
+        DrawFPS(20, 70);
 
         EndDrawing();
     }

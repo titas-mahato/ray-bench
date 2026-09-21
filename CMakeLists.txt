@@ -28,9 +28,14 @@ FetchContent_MakeAvailable(raylib)
 # Source files
 set(SOURCES
     src/main.cpp
+    src/ParticleSystem.cpp
 )
 
-add_executable(ray-bench ${SOURCES})
+set(HEADERS
+    src/ParticleSystem.hpp
+)
+
+add_executable(ray-bench ${SOURCES} ${HEADERS})
 
 target_include_directories(ray-bench PRIVATE src)
 target_link_libraries(ray-bench PRIVATE raylib)
