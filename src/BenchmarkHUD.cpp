@@ -62,7 +62,7 @@ void BenchmarkHUD::Render(RenderMode currentMode, int particleCount, int maxCapa
     // Benchmark title header
     DrawText("RAY-BENCH | HARDWARE PERFORMANCE MONITOR", leftMargin, cursorY, 14, Color{ 56, 189, 248, 255 });
     cursorY += 18;
-    DrawText("Target Spec: NVIDIA GTX 1650 (4GB VRAM) | 8GB RAM", leftMargin, cursorY, 12, Color{ 148, 163, 184, 255 });
+    DrawText("Target Spec: NVIDIA RTX 3050 (6GB VRAM) | 16GB RAM", leftMargin, cursorY, 12, Color{ 148, 163, 184, 255 });
     cursorY += 22;
 
     // Divider
@@ -129,9 +129,9 @@ void BenchmarkHUD::Render(RenderMode currentMode, int particleCount, int maxCapa
     // Controls Legend
     DrawText("HOTKEYS:", leftMargin, cursorY, 11, Color{ 94, 234, 212, 255 });
     cursorY += 16;
-    DrawText("[SPACE] Toggle Mode A/B   [UP/DOWN] +/-5k Particles", leftMargin, cursorY, 11, Color{ 203, 213, 225, 255 });
+    DrawText("[SPACE] Toggle Mode A/B   [UP/DOWN] +/-25k Particles", leftMargin, cursorY, 11, Color{ 203, 213, 225, 255 });
     cursorY += 15;
-    DrawText("[1-5] Presets (1k, 10k, 25k, 50k, 100k)   [V] V-Sync   [R] Reset", leftMargin, cursorY, 11, Color{ 203, 213, 225, 255 });
+    DrawText("[1-5] Presets (10k, 50k, 100k, 250k, 500k)   [V] V-Sync   [R] Reset", leftMargin, cursorY, 11, Color{ 203, 213, 225, 255 });
     cursorY += 15;
     DrawText("[H] Hide/Show HUD         [F11] Toggle Fullscreen", leftMargin, cursorY, 11, Color{ 148, 163, 184, 255 });
 }

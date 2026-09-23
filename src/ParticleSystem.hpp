@@ -18,9 +18,9 @@ struct Particle {
 
 class ParticleSystem {
 public:
-    static constexpr int MIN_PARTICLES = 1000;
-    static constexpr int MAX_PARTICLES = 100000;
-    static constexpr int STEP_PARTICLES = 5000;
+    static constexpr int MIN_PARTICLES = 10000;
+    static constexpr int MAX_PARTICLES = 500000;
+    static constexpr int STEP_PARTICLES = 25000;
 
     ParticleSystem(int initialCount, int screenWidth, int screenHeight);
     ~ParticleSystem() = default;

@@ -14,8 +14,8 @@ int main() {
     bool vsyncEnabled = false;
     SetTargetFPS(0);
 
-    // Initial load: 10,000 particles
-    ParticleSystem particleSystem(10000, initialWidth, initialHeight);
+    // Initial load: 50,000 particles (RTX 3050 Profile)
+    ParticleSystem particleSystem(50000, initialWidth, initialHeight);
     BenchmarkHUD hud;
 
     // Start in Batched mode for optimal initial launch
@@ -37,12 +37,12 @@ int main() {
             currentMode = (currentMode == RenderMode::Naive) ? RenderMode::Batched : RenderMode::Naive;
         }
 
-        // Particle Count Presets
-        if (IsKeyPressed(KEY_ONE))   particleSystem.SetCount(1000);
-        if (IsKeyPressed(KEY_TWO))   particleSystem.SetCount(10000);
-        if (IsKeyPressed(KEY_THREE)) particleSystem.SetCount(25000);
-        if (IsKeyPressed(KEY_FOUR))  particleSystem.SetCount(50000);
-        if (IsKeyPressed(KEY_FIVE))  particleSystem.SetCount(100000);
+        // Particle Count Presets (RTX 3050 Ampere Tier)
+        if (IsKeyPressed(KEY_ONE))   particleSystem.SetCount(10000);
+        if (IsKeyPressed(KEY_TWO))   particleSystem.SetCount(50000);
+        if (IsKeyPressed(KEY_THREE)) particleSystem.SetCount(100000);
+        if (IsKeyPressed(KEY_FOUR))  particleSystem.SetCount(250000);
+        if (IsKeyPressed(KEY_FIVE))  particleSystem.SetCount(500000);
 
         // Arrow Keys: Fine-grained increment / decrement
         if (IsKeyPressed(KEY_UP)) {
