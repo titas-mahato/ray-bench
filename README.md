@@ -16,6 +16,9 @@ git clone https://github.com/titas-mahato/ray-bench.git && cd ray-bench
 
 # 2. Build and launch (Automatic Raylib fetch via CMake)
 powershell -ExecutionPolicy Bypass -File .\build.ps1 -Run
+
+# Or double-click run.bat directly on Windows
+.\run.bat
 ```
 
 *Alternatively, using standard CMake:*
