@@ -81,7 +81,7 @@ The table below measures the GTX 1650 performance under identical entity simulat
 
 ---
 
-## 🛠 Project Architecture
+## Project Architecture
 
 ```
 ray-bench/
@@ -99,5 +99,5 @@ ray-bench/
 
 ---
 
-## 📄 License
+## License
 This project is open-source under the [MIT License](LICENSE). Built using [Raylib](https://www.raylib.com/).
